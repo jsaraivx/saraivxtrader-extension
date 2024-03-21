@@ -1,0 +1,61 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+  "name": "Control Trader",
+  "description": "Control yourself by removing the operation buttons",
+  "version": "1.0.1.6",
+  "manifest_version": 3,
+  "web_accessible_resources": [
+    {
+      "resources": ["images/*"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "action": {
+    "default_icon": {
+      "16": "images/icon.png",
+      "24": "images/icon.png",
+      "32": "images/icon.png",
+      "48": "images/icon.png",
+      "128": "images/icon.png"
+    }
+  },
+  "icons": {
+    "16": "images/icon.png",
+    "24": "images/icon.png",
+    "32": "images/icon.png",
+    "48": "images/icon.png",
+    "128": "images/icon.png"
+  },
+  "host_permissions": [
+    "https://quotex.com/en/demo-trade/",
+    "https://quotex.com/pt/demo-trade/",
+    "https://qxbroker.com/pt/demo-trade/",
+    "https://qxbroker.com/en/demo-trade/",
+    "https://quotex.com/en/trade/",
+    "https://quotex.com/pt/trade/",
+    "https://qxbroker.com/pt/trade/",
+    "https://qxbroker.com/en/trade/"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://quotex.com/en/demo-trade/*",
+        "https://quotex.com/pt/demo-trade/*",
+        "https://qxbroker.com/pt/demo-trade/*",
+        "https://qxbroker.com/en/demo-trade/*",
+        "https://quotex.com/en/trade/*",
+        "https://quotex.com/pt/trade/*",
+        "https://qxbroker.com/pt/trade/*",
+        "https://qxbroker.com/en/trade/*"
+      ],
+      "css": [
+        "style.css"
+      ],
+      "js": [
+        "sentry.min.js",
+        "main.js"
+      ]
+    }
+  ]
+}

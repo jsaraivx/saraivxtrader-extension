@@ -1,0 +1,604 @@
+/* ===== BLOCK BODY ===== */
+
+body.control-trader-blocked button.button.button--success.button--spaced.call-btn.section-deal__button,
+body.control-trader-blocked button.button.button--danger.button--spaced.put-btn.section-deal__button {
+  transform: scale(0.00001);
+  display: none;
+}
+
+body.control-trader-price-higher-than-daily-limit button.button.button--success.button--spaced.call-btn.section-deal__button,
+body.control-trader-price-higher-than-daily-limit button.button.button--danger.button--spaced.put-btn.section-deal__button {
+  transform: scale(0.00001);
+  display: none;
+}
+
+body.control-trader-blocked .section-deal__pending:before {
+  content: 'Respeite o gerenciamento';
+}
+
+.trades-list-item__buttons-item.double-btn {
+  display: none;
+}
+
+/* ===== LOGO ===== */
+
+#control-trader-logo img {
+  height: 40px;
+}
+
+#control-trader-stroke-logo img {
+  height: 60px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* ===== BLOCK RIGHT SIDEBAR ===== */
+.sidebar-section.control-trader-blocked .section-deal, .sidebar-section #control-trader-percentage-block {
+  transform: scale(0.00001);
+  display: none;
+}
+
+.sidebar-section.control-trader-blocked #control-trader-percentage-block {
+  transform: scale(1);
+  display: block;
+}
+
+#control-trader-percentage-block {
+  padding: 10px 0;
+}
+
+#control-trader-percentage-block select, #control-trader-percentage-block label, #control-trader-percentage-block button {
+  display: block;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+#control-trader-percentage-block .control-trader-error {
+  margin: 0;
+}
+
+/* ===== MODAL STYLE ===== */
+
+#control-trader-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+#control-trader-modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 20px;
+  width: calc(100% - 20px);
+  max-width: 550px;
+}
+
+#control-trader-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#control-trader-modal-title {
+  margin: 0;
+}
+
+#control-trader-modal-body {
+  margin: 20px 0;
+}
+
+.control-trader-close-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: 25px;
+}
+
+/* ===== STATUS STYLE ===== */
+
+#control-trader-status-container {
+  position: fixed;
+  top: 57px;
+  right: 218px;
+  z-index: 990;
+  display: flex;
+  align-items: center;
+}
+
+#control-trader-daily-limit {
+  font-weight: 900;
+  font-size: 10px;
+  line-height: 12px;
+  color: #9a9da6;
+  text-transform: uppercase;
+  display: flex;
+  margin-top: 5px;
+  position: relative;
+}
+
+#control-trader-daily-limit > div {
+  padding: 5px 10px;
+  background: #2b3040;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#control-trader-daily-limit > div + div {
+  margin-left: 10px;
+}
+
+#control-trader-daily-limit > div span {
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+#control-trader-daily-limit > div#control-trader-daily-loss-limit span.control-trader-operated-number {
+  color: #ff6250;
+}
+
+#control-trader-daily-limit > div#control-trader-daily-gain-limit span.control-trader-operated-number {
+  color: #11af59;
+}
+
+#control-trader-daily-limit > #control-trader-daily-risk-limit {
+  position: absolute;
+  left: 0;
+  bottom: -32px;
+  margin: 0;
+}
+
+#control-trader-daily-limit > #control-trader-daily-risk-limit span.control-trader-operated-number {
+  color: #ff6250;
+}
+
+#control-trader-disabled-messages {
+  font-weight: 900;
+  font-size: 10px;
+  line-height: 12px;
+  color: rgb(154, 157, 166);
+  text-transform: uppercase;
+  position: absolute;
+  bottom: -21px;
+  right: 0px;
+}
+
+#control-trader-disabled-messages span {
+  padding: 5px 10px;
+  background: rgb(43, 48, 64);
+  border-radius: 4px;
+}
+
+ul#control-trader-status {
+  padding: 0;
+  margin: 2px;
+  display: flex;
+  list-style: none;
+  margin-top: 7px;
+}
+
+ul#control-trader-status li {
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  margin-right: 5px;
+}
+
+ul#control-trader-status li.control-trader-processing-operation {
+  background-color: #ffffff;
+}
+
+ul#control-trader-status li.control-trader-gain-operation {
+  background-color: #11af59;
+}
+
+ul#control-trader-status li.control-trader-loss-operation {
+  background-color: #ff6250;
+}
+
+ul#control-trader-status li.control-trader-draw-operation {
+  background-color: #026fd3;
+}
+
+/* ===== HEADER STYLE ===== */
+
+.header__banner {
+  display: none!important;
+}
+
+div#control-trader-header {
+  width: 13px;
+  position: fixed;
+  top: 13px;
+  right: 615px;
+  z-index: 1000;
+}
+
+div#control-trader-header div#control-trader-icons {
+  position: relative;
+  cursor: pointer;
+  transition: all 310ms ease-out;
+  opacity: 1;
+}
+
+div#control-trader-header div#control-trader-icons:hover {
+  opacity: 0.8;
+}
+
+div#control-trader-header div#control-trader-icons div#control-trader-menu-icon {
+  background: #fff;
+  border-radius: 50%;
+  width: 12px;
+  position: absolute;
+  bottom: 4px;
+  left: -1px;
+  padding: 6%;
+}
+
+div#control-trader-header div#control-trader-menu {
+  position: absolute;
+  padding: 0px;
+  top: 45px;
+  left: 10px;
+  width: max-content;
+  transition: opacity 310ms ease-out;
+  opacity: 1;
+}
+
+div#control-trader-header div#control-trader-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+div#control-trader-header div#control-trader-menu ul li {
+  padding: 0px 5px;
+  background: #fff;
+  color: #1d1f2d;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center;
+}
+
+div#control-trader-header div#control-trader-menu ul li + li {
+  margin-top: 10px;
+}
+
+div#control-trader-header div#control-trader-menu ul li:hover {
+  opacity: 0.8;
+}
+
+div#control-trader-header div#control-trader-menu.control-trader-hidden {
+  position: fixed;
+  top: -100%;
+  opacity: 0;
+}
+
+/* ===== FORM STYLE ===== */
+
+#control-trader-form, #control-trader-contact {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 0px 0px 5px 0px;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+  color: #1d1f2d;
+  transition: transform 0.5s ease-in-out;
+  z-index: 100;
+}
+
+#control-trader-form.control-trader-active, #control-trader-contact.control-trader-active {
+  transform: translateX(0);
+}
+
+#control-trader-form.control-trader-closed, #control-trader-contact.control-trader-closed {
+  transform: translateX(-100%);
+}
+
+#control-trader-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+#control-trader-form input[type="text"],
+#control-trader-form textarea {
+  display: block;
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  font-size: 14px;
+  font-family: inherit;
+  color: gray;
+}
+
+#control-trader-form input[type="submit"], .control-trader-submit-button {
+  display: block;
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #026fd3;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  width: 100%;
+}
+
+#control-trader-form input[type="submit"]:hover, .control-trader-submit-button:hover {
+  background-color: darkgray;
+  color: white;
+}
+
+.control-trader-submit-button {
+  text-align: center;
+}
+
+#control-trader-form .control-trader-close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+#control-trader-contact .control-trader-close-contact {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+/* Limit Design */
+
+#control-trader-accept-percentage {
+  border: 0px;
+  padding: 7px 12px;
+  margin-top: 8px;
+  color: #ffffff;
+  background-color: #026fd3;
+  font-weight: 900;
+  font-size: 14px;
+  border-radius: 4px;
+}
+
+/* User Message Interface */
+
+#control-trader-user-message {
+  position: fixed;
+  z-index: 990;
+  padding: 5px 10px;
+  border-radius: 4px;
+  color: #ffffff;
+  font-size: 12px;
+  top: 10px;
+  right: 630px;
+  text-align: center;
+  background: #1d1f2d;
+}
+
+#control-trader-user-message-btn {
+  display: inline;
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+  color: #0faf59;
+  background: none;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* Error Message Styles */
+.control-trader-error {
+  color: #ff6250;
+  font-size: 12px;
+  margin-top: -10px;
+  margin-bottom: 15px;
+}
+
+/* Success Message Styles */
+#control-trader-message-success {
+  color: #11af59;
+  font-size: 12px;
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+
+/* ===== LOGIN MODAL ===== */
+
+#control-trader-user-login-modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+}
+
+.control-trader-login-modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 50px;
+  border: 1px solid #888;
+  width: 400px;
+  min-height: 460px;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.control-trader-login-close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.control-trader-login-close:hover,
+.control-trader-login-close:focus {
+  color: black;
+  text-decoration: none;
+}
+
+.control-trader-login-modal-content h3 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.control-trader-login-modal-content p {
+  margin-bottom: 10px;
+}
+
+#control-trader-email-login {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+}
+
+.control-trader-buy-paragraph {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.control-trader-buy-paragraph a {
+  color: #026fd3;
+  text-decoration: underline;
+}
+
+.control-trader-author {
+  position: absolute;
+  font-size: 12px;
+  margin-left: -43px;
+  margin-top: 10px;
+  color: #91939c;
+}
+
+.control-trader-author a {
+  color: #91939c;
+  text-decoration: none;
+}
+
+#control-trader-login-button {
+  display: block;
+  margin-top: 0px;
+  padding: 5px 10px;
+  background-color: #026fd3;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  font-size: 14px;
+  font-family: inherit;
+  cursor: pointer;
+  width: 100%;
+}
+
+#control-trader-login-button:hover {
+  background-color: darkgray;
+}
+
+#control-trader-login-button:hover {
+  background-color: darkgray;
+}
+
+.control-trader-login-error {
+  margin-top: 10px;
+  color: #ff6250;
+}
+
+.control-trader-login-modal-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* toggle-pill-color */
+
+.control-trader-field {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.control-trader-field p {
+  margin: 0px 0px 0px 10px;
+}
+
+.control-trader-toggle-pill-color input[type="checkbox"] {
+  display: none;
+}
+
+.control-trader-toggle-pill-color input[type="checkbox"] + label {
+  display: block;
+  position: relative;
+  width: 3em !important;
+  height: 1.6em;
+  border-radius: 1em;
+  background: #e84d4d !important;
+  box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-transition: background 0.1s ease-in-out;
+  transition: background 0.1s ease-in-out;
+}
+
+.control-trader-toggle-pill-color input[type="checkbox"] + label:before {
+  content: "";
+  display: block;
+  width: 1.2em;
+  height: 1.2em;
+  border-radius: 1em;
+  background: #fff;
+  box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  left: 0.2em;
+  top: 0.2em;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+.control-trader-toggle-pill-color input[type="checkbox"]:checked + label {
+  background: #47cf73 !important;
+}
+
+.control-trader-toggle-pill-color input[type="checkbox"]:checked + label:before {
+  box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.2);
+  left: 1.6em;
+}
+
+/* toggle-pill-color end */

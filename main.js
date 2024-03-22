@@ -11,9 +11,8 @@ const version = '1.0.1.6';
 
 /* ===== METHODS ===== */
 
-const logoUrl = chrome.runtime.getURL('images/lettering.png');
-const logoStrokeUrl = chrome.runtime.getURL('images/lettering-stroke.png');
-
+const logoUrl = chrome.runtime.getURL('images/title-white.png');
+const logoStrokeUrl = chrome.runtime.getURL('images/title-black.png');
 const minutesToWait = 3;
 
 class dateHelpers {

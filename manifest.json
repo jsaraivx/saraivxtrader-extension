@@ -1,9 +1,9 @@
 {
 "update_url": "https://clients2.google.com/service/update2/crx",
 
-  "name": "Control Trader",
-  "description": "Control yourself by removing the operation buttons",
-  "version": "1.0.1.6",
+  "name": "saraivx-trader",
+  "description": "Aqui, nós gerenciamos sua banca.",
+  "version": "1.0",
   "manifest_version": 3,
   "web_accessible_resources": [
     {
